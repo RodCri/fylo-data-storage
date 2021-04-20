@@ -1,0 +1,177 @@
+:root{
+    --gradient: hsl(6, 100%, 80%) to hsl(335, 100%, 65%);
+    --pale-blue: hsl(243, 100%, 93%);
+    --grayish-blue: hsl(229, 7%, 55%);
+    --dark-blue: hsl(228, 56%, 26%);
+    --very-dark-blue: hsl(229, 57%, 11%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    background-color: var(--very-dark-blue);
+    color: var(--pale-blue);
+    background-image: url('../images/bg-desktop.png');
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+/* Content */
+.content{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Container */
+.container{
+    width: 70%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 2em;
+}
+/* Card Options */
+.card__options{
+    width: 35%;
+    padding: 2.5em 6em 2.5em 2.5em;
+    background-color: var(--dark-blue);
+    border-radius: 5px;
+    border-top-right-radius: 80px;
+}
+.card__options-logo{
+    padding: 0 0 2em;
+}
+.card__options-icons{
+    display: flex;
+    gap: 1em;
+}
+.card__options-icons img{
+    padding: 1em;
+    border-radius: 10px;
+    background-color: var(--very-dark-blue);
+}
+
+.card__progress-label{
+    padding: 1em 0;
+}
+.card__progress{
+    background-color: var(--dark-blue);
+    height: 90%;
+    width: 65%;
+    padding: 2em 2.5em;
+    border-radius: 5px;
+    position: relative;
+}
+.card__progress-bar{
+    width: 100%;
+    height: 1rem;
+    background: #0c122c;
+    border-radius: 25px;
+    position: relative;
+}
+.bar-level::after {
+    content: "";
+    position: absolute;
+    height: 0.7rem;
+    width: 0.7rem;
+    background-color: #dddbff;
+    border-radius: 25px;
+    left: 100%;
+    -webkit-transform: translateX(-125%);
+    transform: translateX(-125%);
+}
+.bar-level {
+    position: absolute;
+    width: 70%;
+    height: 0.7rem;
+    background: linear-gradient(100deg, #ffa399, #ff4d97);
+    top: .2rem;
+    left: .2rem;
+    border-radius: 25px;
+}
+.bard-tags{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+.gbleft {
+    position: absolute;
+    bottom: 80%;
+    left: 65%;
+    height: 4.3rem;
+    width: 10.5rem;
+    background-color: white;
+    border-radius: 15px;
+    text-transform: uppercase;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-around;
+    -webkit-box-align: center;
+    align-items: center;
+    color: #848794;
+}
+em {
+    font-weight: 700;
+}
+.gbleft em {
+    color: black;
+    font-size: 2.5rem;
+}
+.gbleft::after {
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 2.5rem solid white;
+    border-left: 2.5rem solid transparent;
+    bottom: -1rem;
+    right: 0;
+}
+@media(max-width:900px) and (min-width:720px){
+    .container{
+        width: 90%;
+    }
+    .card__options{
+        width: 40%;
+    }
+    .card__progress{
+        width: 60%;
+    }
+    .gbleft{
+        left: 55%;
+    }
+}
+@media(max-width:600px) and (min-width:320px){
+    body{
+        background-image: url('../images/bg-mobile.png');
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: cover;
+    }
+    .container{
+        width: 95%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .card__options{
+        width: 90%;
+    }
+    .card__progress{
+        width: 90%;
+        padding: 2em;
+    }
+    .gbleft{
+        top: 90%;
+        left: 20%;
+    }
+    .gbleft::after{
+        border-top: 0;
+    }
+}
